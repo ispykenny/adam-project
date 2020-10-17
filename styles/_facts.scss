@@ -25,7 +25,6 @@
 		margin-bottom: 1.4rem;
 		transform: translateX(-25px);
 		opacity: 0;
-		transition: opacity 0.4s, transform 1s ease;
 		
 		figure {
 			margin: 0;
@@ -44,7 +43,6 @@
 		display: flex;
 		opacity: 0;
 		transform: translateX(-35px);
-		transition: opacity 0.4s, transform 1s ease;
 	}
 	
 		
@@ -70,7 +68,6 @@
 		position: absolute;
 		bottom: 0; left: 0;
 		opacity: 0;
-		transition: width 1600ms, opacity 600ms ease;
 	}
 	
 	&__cta {
@@ -178,14 +175,17 @@
 .facts__image.in-view {
 	opacity: 1;
 	transform: translateX(0px);
+	transition: opacity 0.2s, transform 0.5s ease;
 }
 
 .facts__copy.in-view {
 	opacity: 1;
-	transform: translateX(0px)
+	transform: translateX(0px);
+	transition: opacity 0.2s, transform 0.5s ease;
 }
 
 .facts__hr.in-view {
 	width: 100%;
 	opacity: 1;
+	transition: width 1s, opacity 600ms ease;
 }

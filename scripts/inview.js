@@ -15,7 +15,6 @@ const inView = ({element, addClass}) => {
 		});
 	}, observerOptions);
 	
-
 	if(typeof element != 'object') {
 		let dom_item = document.querySelectorAll(`.${element}`);
 		dom_item.forEach((item) => {
@@ -25,18 +24,12 @@ const inView = ({element, addClass}) => {
 		element.forEach(($el) => {
 			allDomItems.push(document.querySelectorAll(`.${$el}`))
 		})
-		
-		console.log(allDomItems)
 		allDomItems.forEach((nodes) => {
 			nodes.forEach((nodesitem) => {
-				console.log(nodesitem)
 				observer.observe(nodesitem);
 			})
 		})
 	}
-	
-	
-
 }
 
 export { inView };

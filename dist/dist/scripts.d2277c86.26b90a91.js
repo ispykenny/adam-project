@@ -117,68 +117,122 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/inview.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.inView = void 0;
-
+})({"scripts.d2277c86.js":[function(require,module,exports) {
+var define;
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.5
-};
+parcelRequire = function (e, r, t, n) {
+  var i,
+      o = "function" == typeof parcelRequire && parcelRequire,
+      u = "function" == typeof require && require;
 
-var inView = function inView(_ref) {
-  var element = _ref.element,
-      addClass = _ref.addClass;
-  var allDomItems = [];
-  var observer = new IntersectionObserver(function (element) {
-    element.forEach(function (dom_item) {
-      if (dom_item.intersectionRatio > 0) {
-        dom_item.target.classList.add("".concat(addClass));
+  function f(t, n) {
+    if (!r[t]) {
+      if (!e[t]) {
+        var i = "function" == typeof parcelRequire && parcelRequire;
+        if (!n && i) return i(t, !0);
+        if (o) return o(t, !0);
+        if (u && "string" == typeof t) return u(t);
+        var c = new Error("Cannot find module '" + t + "'");
+        throw c.code = "MODULE_NOT_FOUND", c;
       }
-    });
-  }, observerOptions);
 
-  if (_typeof(element) != 'object') {
-    var dom_item = document.querySelectorAll(".".concat(element));
-    dom_item.forEach(function (item) {
-      observer.observe(item);
-    });
-  } else {
-    element.forEach(function ($el) {
-      allDomItems.push(document.querySelectorAll(".".concat($el)));
-    });
-    allDomItems.forEach(function (nodes) {
-      nodes.forEach(function (nodesitem) {
-        observer.observe(nodesitem);
-      });
-    });
+      p.resolve = function (r) {
+        return e[t][1][r] || r;
+      }, p.cache = {};
+      var l = r[t] = new f.Module(t);
+      e[t][0].call(l.exports, p, l, l.exports, this);
+    }
+
+    return r[t].exports;
+
+    function p(e) {
+      return f(p.resolve(e));
+    }
   }
-};
 
-exports.inView = inView;
-},{}],"scripts/index.js":[function(require,module,exports) {
-"use strict";
+  f.isParcelRequire = !0, f.Module = function (e) {
+    this.id = e, this.bundle = f, this.exports = {};
+  }, f.modules = e, f.cache = r, f.parent = o, f.register = function (r, t) {
+    e[r] = [function (e, r) {
+      r.exports = t;
+    }, {}];
+  };
 
-var _inview = require("./inview");
+  for (var c = 0; c < t.length; c++) {
+    try {
+      f(t[c]);
+    } catch (e) {
+      i || (i = e);
+    }
+  }
 
-/*
- --- element {array || string} ----
-// target element you want to check for
- --- addClass ---
-// class that gets added when element is in view
-*/
-(0, _inview.inView)({
-  element: 'animate',
-  addClass: 'in-view'
-});
-},{"./inview":"scripts/inview.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  if (t.length) {
+    var l = f(t[t.length - 1]);
+    "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = l : "function" == typeof define && define.amd ? define(function () {
+      return l;
+    }) : n && (this[n] = l);
+  }
+
+  if (parcelRequire = f, i) throw i;
+  return f;
+}({
+  "nYsC": [function (require, module, exports) {
+    "use strict";
+
+    function o(t) {
+      return (o = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (o) {
+        return _typeof(o);
+      } : function (o) {
+        return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : _typeof(o);
+      })(t);
+    }
+
+    Object.defineProperty(exports, "__esModule", {
+      value: !0
+    }), exports.inView = void 0;
+
+    var t = {
+      root: null,
+      rootMargin: "0px",
+      threshold: .5
+    },
+        e = function e(_e) {
+      var n = _e.element,
+          r = _e.addClass,
+          c = [],
+          i = new IntersectionObserver(function (o) {
+        o.forEach(function (o) {
+          o.intersectionRatio > 0 && o.target.classList.add("".concat(r));
+        });
+      }, t);
+      "object" != o(n) ? document.querySelectorAll(".".concat(n)).forEach(function (o) {
+        i.observe(o);
+      }) : (n.forEach(function (o) {
+        c.push(document.querySelectorAll(".".concat(o)));
+      }), console.log(c), c.forEach(function (o) {
+        o.forEach(function (o) {
+          console.log(o), i.observe(o);
+        });
+      }));
+    };
+
+    exports.inView = e;
+  }, {}],
+  "g2Hq": [function (require, module, exports) {
+    "use strict";
+
+    var e = require("./inview");
+
+    (0, e.inView)({
+      element: ["facts__image", "facts__copy", "facts__hr"],
+      addClass: "in-view"
+    });
+  }, {
+    "./inview": "nYsC"
+  }]
+}, {}, ["g2Hq"], null);
+},{}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -206,7 +260,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64728" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64721" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -382,5 +436,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/index.js"], null)
-//# sourceMappingURL=/scripts.bcf3243b.js.map
+},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts.d2277c86.js"], null)
+//# sourceMappingURL=/scripts.d2277c86.26b90a91.js.map

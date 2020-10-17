@@ -9,6 +9,6 @@ import { inView } from './inview';
 // class that gets added when element is in view
 */
 inView({
-	element: ['facts__image', 'facts__copy', 'facts__hr'],
+	element: 'animate',
 	addClass: 'in-view'
 })

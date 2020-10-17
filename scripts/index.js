@@ -1,6 +1,4 @@
-import { inView } from './inview';
-
-
+import { inView } from "./inview";
 
 /*
  --- element {array || string} ----
@@ -9,6 +7,6 @@ import { inView } from './inview';
 // class that gets added when element is in view
 */
 inView({
-	element: 'animate',
-	addClass: 'in-view'
-})
+  element: "animate",
+  addClass: "in-view",
+});

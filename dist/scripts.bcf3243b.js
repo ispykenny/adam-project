@@ -145,7 +145,7 @@ var inView = function inView(_ref) {
     });
   }, observerOptions);
 
-  if (_typeof(element) != 'object') {
+  if (_typeof(element) != "object") {
     var dom_item = document.querySelectorAll(".".concat(element));
     dom_item.forEach(function (item) {
       observer.observe(item);
@@ -175,8 +175,8 @@ var _inview = require("./inview");
 // class that gets added when element is in view
 */
 (0, _inview.inView)({
-  element: 'animate',
-  addClass: 'in-view'
+  element: "animate",
+  addClass: "in-view"
 });
 },{"./inview":"scripts/inview.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -206,7 +206,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64728" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55186" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

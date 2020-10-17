@@ -1,0 +1,191 @@
+
+
+
+
+.facts {
+	
+	
+	&__item {
+		position: relative;
+		margin: 0 auto 2rem auto;
+		max-width: 700px;
+		padding-bottom: 1em;
+		
+		&:last-of-type {
+			
+			.facts__hr {
+				display: none;
+			}
+		}
+	}
+	
+	&__image {
+		width: auto;
+		position: relative;
+		margin-bottom: 1.4rem;
+		transform: translateX(-25px);
+		opacity: 0;
+		transition: opacity 0.4s, transform 1s ease;
+		
+		figure {
+			margin: 0;
+			padding-bottom: (778/831) * 100%;
+			background: #eee;
+		}
+		
+		img {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+		}
+	}
+	
+	&__copy {
+		display: flex;
+		opacity: 0;
+		transform: translateX(-35px);
+		transition: opacity 0.4s, transform 1s ease;
+	}
+	
+		
+	&--index {
+		margin-right: 1rem;
+	}
+	
+	&__content p {
+		margin-top: 0.3rem;
+	}
+	
+	&__title {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 2rem;
+		font-weight: 600;
+	}
+	
+	&__hr {
+		height: 2px;
+		width: 40%;
+		background: black;
+		position: absolute;
+		bottom: 0; left: 0;
+		opacity: 0;
+		transition: width 1600ms, opacity 600ms ease;
+	}
+	
+	&__cta {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+
+
+@media(min-width: 600px) {
+	.facts {
+		
+		&__hr {
+			top: 0;
+		}
+		
+		@for $i from 0 through 10 {
+			&__item {
+				display: flex;
+				max-width: 100%;
+				margin: 0;
+				padding: 0;
+			
+				
+				&:last-of-type {
+					.facts__hr {
+						display: block;
+					}
+				}
+				
+				.facts__hr {
+					right: 0;
+					left: auto;
+					
+					&:after {
+						content: '';
+						position: absolute;
+						top: 0; left: 0;
+						width: 100%;
+						background: white;
+						height: 2px;
+					}
+				}
+				
+				&:nth-child(#{$i}) {
+					.facts__image {
+						left: 5% * ($i - 1);
+					}
+					
+					.facts__hr {
+						&:after {
+							width: 38% + 5% * ($i - 1);
+						}
+					}
+				}
+			}
+		}
+		
+		&__image {
+			width: 34%;
+			z-index: 5;
+			position: absolute;
+		}
+		
+		&__copy {
+			width: 52%;
+			margin-left: 48%;
+			padding: 1rem 0;
+		}
+		
+		&__title {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+
+@media(min-width: 768px) {
+	.facts {
+		
+		&__copy {
+			width: 45%;
+			margin-left: 55%;
+		}
+		
+		&__title {
+			font-size: 2rem;
+		}
+	}
+}
+
+
+@media(min-width: 992px) {
+	.facts {
+		
+		&__title {
+			font-size: 2.4rem;
+		}
+	}
+}
+
+
+// Animation 
+.facts__image.in-view {
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+.facts__copy.in-view {
+	opacity: 1;
+	transform: translateX(0px)
+}
+
+.facts__hr.in-view {
+	width: 100%;
+	opacity: 1;
+}
